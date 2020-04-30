@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { loadData } from '../utils';
-import { Wrapper } from '../layout';
-import TopicList from './TopicList';
+import { Wrapper, SubTitle } from '../layout';
 
 const LinksList = () => {
   const apiBase = `http://localhost:3000/v1`;
@@ -17,14 +16,13 @@ const LinksList = () => {
 
   return (
     <Wrapper>
-      <h2>List of Links</h2>
+      <SubTitle>List of Links</SubTitle>
       <ul>
-        <li>
-          Dummy <TopicList />
-        </li>
         {links.map((link) => (
           <li>
-            {link.title} <TopicList />
+            <a href={link.link} target="_blank" rel="noopener noreferrer">
+              {link.title}
+            </a>
           </li>
         ))}
       </ul>

@@ -6,7 +6,7 @@ const TopicSelect = Styled.select`
     display: inline-block;
 `;
 
-const TopicList = () => {
+const TopicList = (props) => {
   const apiBase = `http://localhost:3000/v1`;
   const [topics, setTopics] = useState([]);
 
@@ -19,7 +19,7 @@ const TopicList = () => {
   }, [apiBase]);
 
   return (
-    <TopicSelect>
+    <TopicSelect onChange={props.onChange}>
       {topics.map((topic) => (
         <option value={topic.id} key={topic.id}>
           {topic.title}

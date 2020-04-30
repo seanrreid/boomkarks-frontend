@@ -7,4 +7,13 @@ const Wrapper = Styled.div`
     width: 100%;
 `;
 
-export { Wrapper };
+const Title = Styled.h1`
+    margin-top: 0;
+    font-size: 3.052em;
+`;
+
+const SubTitle = Styled.h2`
+    font-size: 2.441em;
+`;
+
+export { Wrapper, Title, SubTitle };
