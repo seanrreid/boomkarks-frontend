@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { loadData } from '../utils';
+import { loadData, apiBase } from '../utils';
 import SelectInput from '../inputs/Select';
 
 const AddLink = () => {
-  const apiBase = `http://localhost:3000/v1`;
   const [topics, setTopics] = useState([]);
   const [input, setInput] = useState({});
 
@@ -13,7 +12,7 @@ const AddLink = () => {
       const topics = await loadData(url);
       setTopics(topics);
     })();
-  }, [apiBase]);
+  }, []);
 
   const handleInputChange = (e) =>
     setInput({

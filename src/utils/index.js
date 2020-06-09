@@ -4,4 +4,7 @@ const loadData = async (url) => {
   return data;
 };
 
-export { loadData };
+const apiBase =
+  "http://boomkarksapp.eba-f23q8pts.us-east-2.elasticbeanstalk.com/v1";
+
+export { loadData, apiBase };
